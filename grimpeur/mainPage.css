@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+main {
+    display: flex;
+    justify-content: center;
+}
+  
+.firstBlock{
+    padding: 0px;  
+    background-color:rgb(231, 231, 231);
+    width: 600px;
+    height: 500px;     
+    margin: 0 5% auto 0; 
+}
+  
+  
+.block{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.308);
+}
+  
+.secondBlock{
+    width: 300px;
+    height: 500px;
+    padding: 0%;
+}
+
+.mySlides{
+    display: block;
+    height: 200px;
+    margin: 5% auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.308);
+}
+  
+  
+  

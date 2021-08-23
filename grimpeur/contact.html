@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" href="images/logo2.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.jpg" alt="logo" width="150" height="70" ></a>
+        </div>
+
+
+        <div class="menu">
+            <a href="index.html" id="main"></a>
+            <a href="foto.html" id="foto"></a>
+            <a href="about.html" id="services" ></a>
+            <a href="contact.html" id="contact"></a>
+        </div>
+
+
+        <div class="link">
+            <a href="http://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="facebook" width="20"> </a>
+            <a href="http://www.instagram.com/" target="_blank"><img src="images/instagram.png" alt="facebook" width="20" > </a>
+            <a href="http://www.twitter.com/" target="_blank"><img src="images/twitter.png" alt="facebook" width="20"> </a>   
+        </div>
+
+        <div class="language">
+            <img src="images/LV.png" alt="" onclick="setLang('LV')" width="30" id="lang">
+            <img src="images/RU.png" alt="" onclick="setLang('RU')" width="30" id="lang">
+            <img src="images/EN.png" alt="" onclick="setLang('EN')" width="30" id="lang">
+            
+        </div>
+
+    </nav>
+    <main>
+
+        <h2>Contact Us</h2>
+        <p>Please fill in this form and send us.</p>
+        <form action="process-form.php" method="post">
+            <p>
+                <label for="inputName">Name:<sup>*</sup></label>
+                <input type="text" name="name" id="inputName">
+            </p>
+            <p>
+                <label for="inputEmail">Email:<sup>*</sup></label>
+                <input type="text" name="email" id="inputEmail">
+            </p>
+            <p>
+                <label for="inputSubject">Subject:</label>
+                <input type="text" name="subject" id="inputSubject">
+            </p>
+            <p>
+                <label for="inputComment">Message:<sup>*</sup></label>
+                <textarea name="message" id="inputComment" rows="5" cols="30"></textarea>
+            </p>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+            
+    </main>
+    
+
+    <footer>
+        <div >
+            Izstrādāja: Dmitrijs Pavlovičs 
+            
+        </div>
+        <div>
+            Gmail: pavlovicdmtrijs@gmail.com
+        </div>
+    </footer>
+
+    <script>
+         var content = {
+            LV: {
+                title: "Galvenā",
+
+                main:"Galvenā",
+                foto:"Foto",
+                services:"Pakalpojumi",
+                contact:"Kontakti",
+                
+                h1: "DARBS AUGSTUMĀ RĪGĀ UN VISĀ LATVIJĀ",
+                p1: "Galvenās rūpnieciskā alpīnisma priekšrocības darbam augstumā - operativitāte. Nav nepieciešama stalažu uzstādīšana. Rūpnieciskie alpīnisti sāks strādāt nekavējoties pēc ierašanās objektā.",
+                p2:"Rūpnieciskie alpīnisti nepieciešami, ja pie darba augstumā ekonomiski nav izdevīgi vai tehniski neiespējams, uzstādīt stalažas, apgrūtināti izmantot celšanas mehānismus.",
+                p3:"Veicam darbus tādās vidēs kā tuvu saceltās augstceltnēs un tuvumā citiem komunālajiem pakalpojumiem."
+            },
+            RU: {
+                title: "Главная",
+
+                main:"Главная",
+                foto:"Фото",
+                services:"Услуги",
+                contact:"Контакты"
+                
+            },
+            EN: {
+                title: "Main",
+
+                main:"Main",
+                foto:"Foto",
+                services:"Services",
+                contact:"Contact"
+                
+            }
+        }
+        console.log(document.cookie);
+        console.log(document.cookie.indexOf('lang'));
+        if (document.cookie.indexOf('lang') == -1) {
+            showContent('LV');
+        } else {
+            var language = document.cookie.slice(5, 8);
+            showContent(language);
+        }
+
+
+        function showContent(lang) {
+
+            if (lang === 'LV') {
+                document.querySelector('title').innerText = content.LV.title;
+                document.querySelector('#main').innerText = content.LV.main;
+                document.querySelector('#foto').innerText = content.LV.foto;
+                document.querySelector('#services').innerText = content.LV.services;
+                document.querySelector('#contact').innerText = content.LV.contact;
+                
+            } else {
+                if (lang === 'RU'){
+                    document.querySelector('title').innerText = content.RU.title;
+                    document.querySelector('#main').innerText = content.RU.main;
+                    document.querySelector('#foto').innerText = content.RU.foto;
+                    document.querySelector('#services').innerText = content.RU.services;
+                    document.querySelector('#contact').innerText = content.RU.contact;
+                }else{
+                    // EN
+                    document.querySelector('title').innerText = content.EN.title;
+                    document.querySelector('#main').innerText = content.EN.main;
+                    document.querySelector('#foto').innerText = content.EN.foto;
+                    document.querySelector('#services').innerText = content.EN.services;
+                    document.querySelector('#contact').innerText = content.EN.contact;
+                }
+            }
+
+        }
+
+
+        function setLang(lang) {
+            document.cookie = `lang=${lang};max-age=5000000`;
+            var language = document.cookie.slice(5, 8);
+            showContent(language);
+        }
+    </script>
+</body>
+</html>

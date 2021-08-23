@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" href="images/logo2.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mainPage.css">
+</head>
+
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.jpg" alt="logo" width="150" height="70" ></a>
+        </div>
+
+
+        <div class="menu">
+            <a href="index.html" id="main"></a>
+            <a href="foto.html" id="foto"></a>
+            <a href="about.html" id="services" ></a>
+            <a href="contact.html" id="contact"></a>
+        </div>
+
+        <div class="link">
+            <a href="http://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="facebook" width="20"> </a>
+            <a href="http://www.instagram.com/" target="_blank"><img src="images/instagram.png" alt="facebook" width="20" > </a>
+            <a href="http://www.twitter.com/" target="_blank"><img src="images/twitter.png" alt="facebook" width="20"> </a>   
+        </div>
+
+        <div class="language">
+            <img src="images/LV.png" alt="" onclick="setLang('LV')" width="30" id="lang">
+            <img src="images/RU.png" alt="" onclick="setLang('RU')" width="30" id="lang">
+            <img src="images/EN.png" alt="" onclick="setLang('EN')" width="30" id="lang">
+            
+        </div>
+    </nav>
+
+    <div>
+        <img class="mySlides" src="images/slider/foto2.jpg" style="width:1000px">
+        <img class="mySlides" src="images/slider/foto1.jpg" style="width:1000px">
+        
+    </div>
+
+    <main>
+        
+            
+        
+
+        <div class="block firstBlock">
+                <h1></h1>
+            
+                <p id="first"></p> 
+                <p id="second"></p> 
+                <p id="third"></p>
+        </div>
+        <div class="block secondBlock" >
+            <img src="images/alp.jpg" alt="" width="300">
+        </div>
+        
+        
+    </main>
+
+    <footer>
+        <div >
+            Izstrādāja: Dmitrijs Pavlovičs 
+            
+        </div>
+        <div>
+            Gmail: pavlovicdmtrijs@gmail.com
+        </div>
+    </footer>
+
+    <script>
+
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 5000);    
+        }
+
+
+        // language changes
+
+        var content = {
+            LV: {
+                title: "Galvenā",
+
+                main:"Galvenā",
+                foto:"Foto",
+                services:"Pakalpojumi",
+                contact:"Kontakti",
+                
+                h1: "DARBS AUGSTUMĀ RĪGĀ UN VISĀ LATVIJĀ",
+                p1: "Galvenās rūpnieciskā alpīnisma priekšrocības darbam augstumā - operativitāte. Nav nepieciešama stalažu uzstādīšana. Rūpnieciskie alpīnisti sāks strādāt nekavējoties pēc ierašanās objektā.",
+                p2:"Rūpnieciskie alpīnisti nepieciešami, ja pie darba augstumā ekonomiski nav izdevīgi vai tehniski neiespējams, uzstādīt stalažas, apgrūtināti izmantot celšanas mehānismus.",
+                p3:"Veicam darbus tādās vidēs kā tuvu saceltās augstceltnēs un tuvumā citiem komunālajiem pakalpojumiem."
+            },
+            RU: {
+                title: "Главная",
+
+                main:"Главная",
+                foto:"Фото",
+                services:"Услуги",
+                contact:"Контакты",
+                
+                h1: "ВЫСОТНЫЕ РАБОТЫ В РИГЕ И ПО ВСЕЙ ЛАТВИИ",
+                p1: "Главное преимущество промышленного альпинизма при высотных работах - оперативность. Нет необходимости возводить строительные леса. Промышленные альпинисты приступят к работе сразу по приезду на объект.",
+                p2:"Промышленные альпинисты нужны там, где при высотных работах использование строительных лесов, грузоподъемных механизмов затруднено, экономически не выгодно или технически невозможно.",
+                p3:"Мы выполняем высотные работы среди тесной застройки и в условиях близости других коммуникаций."
+            },
+            EN: {
+                title: "Main",
+
+                main:"Main",
+                foto:"Foto",
+                services:"Services",
+                contact:"Contact",
+                
+                h1: "WORK IN THE HEIGHT IN RIGA AND ALL OVER LATVIA",
+                p1: "The main advantage of industrial mountaineering works in the height – it is promptness. There is no need to install any scaffolds. Our industrial alpinists will start to work immediately after arrival to the object.",
+                p2:"The industrial alpinists are needed if it is not economically convenient or technically possible to install scaffolds in the height of work, or it is difficult to use some lifting mechanisms.",
+                p3:"We also work in such environments as closely erected high-rise buildings and near other building services."
+            }
+        }
+        console.log(document.cookie);
+        console.log(document.cookie.indexOf('lang'));
+        if (document.cookie.indexOf('lang') == -1) {
+            showContent('LV');
+        } else {
+            var language = document.cookie.slice(5, 8);
+            showContent(language);
+        }
+
+
+        function showContent(lang) {
+
+            if (lang === 'LV') {
+                document.querySelector('title').innerText = content.LV.title;
+                document.querySelector('#main').innerText = content.LV.main;
+                document.querySelector('#foto').innerText = content.LV.foto;
+                document.querySelector('#services').innerText = content.LV.services;
+                document.querySelector('#contact').innerText = content.LV.contact;
+                document.querySelector('h1').innerText = content.LV.h1;
+                document.querySelector('#first').innerText = content.LV.p1;
+                document.querySelector('#second').innerText = content.LV.p2;
+                document.querySelector('#third').innerText = content.LV.p3;
+            } else {
+                if (lang === 'RU'){
+                    document.querySelector('title').innerText = content.RU.title;
+                    document.querySelector('#main').innerText = content.RU.main;
+                    document.querySelector('#foto').innerText = content.RU.foto;
+                    document.querySelector('#services').innerText = content.RU.services;
+                    document.querySelector('#contact').innerText = content.RU.contact;
+                    document.querySelector('h1').innerText = content.RU.h1;
+                    document.querySelector('#first').innerText = content.RU.p1;
+                    document.querySelector('#second').innerText = content.RU.p2;
+                    document.querySelector('#third').innerText = content.RU.p3;
+                }else{
+                    // EN
+                    document.querySelector('title').innerText = content.EN.title;
+                    document.querySelector('#main').innerText = content.EN.main;
+                    document.querySelector('#foto').innerText = content.EN.foto;
+                    document.querySelector('#services').innerText = content.EN.services;
+                    document.querySelector('#contact').innerText = content.EN.contact;
+                    document.querySelector('h1').innerText = content.EN.h1;
+                    document.querySelector('#first').innerText = content.EN.p1;
+                    document.querySelector('#second').innerText = content.EN.p2;
+                    document.querySelector('#third').innerText = content.EN.p3;
+                }
+            }
+
+        }
+
+
+        function setLang(lang) {
+            document.cookie = `lang=${lang};max-age=5000000`;
+            var language = document.cookie.slice(5, 8);
+            showContent(language);
+        }
+        </script>
+    
+</body>
+</html>

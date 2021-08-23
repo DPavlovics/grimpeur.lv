@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" href="images/logo2.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.jpg" alt="logo" width="150" height="70" ></a>
+        </div>
+
+        
+        <div class="menu">
+            <a href="index.html" id="main"></a>
+            <a href="foto.html" id="foto"></a>
+            <a href="about.html" id="services" ></a>
+            <a href="contact.html" id="contact"></a>
+        </div>
+
+
+        <div class="link">
+            <a href="http://www.facebook.com/" target="_blank"><img src="images/facebook.png" alt="facebook" width="20"> </a>
+            <a href="http://www.instagram.com/" target="_blank"><img src="images/instagram.png" alt="facebook" width="20" > </a>
+            <a href="http://www.twitter.com/" target="_blank"><img src="images/twitter.png" alt="facebook" width="20"> </a>   
+        </div>
+
+        <div class="language">
+            <img src="images/LV.png" alt="" onclick="setLang('LV')" width="30" id="lang">
+            <img src="images/RU.png" alt="" onclick="setLang('RU')" width="30" id="lang">
+            <img src="images/EN.png" alt="" onclick="setLang('EN')" width="30" id="lang">
+            
+        </div>
+    </nav>
+    <main>
+        <div class="textBlock" >
+            <h1></h1><br>
+            <span id="l1"></span><br><br>
+            
+            <span id="l2"></span><br>
+            <span id="l3"></span><br>
+            <span id="l4"></span><br>
+            <span id="l5"></span><br>
+            <span id="l6"></span><br>
+            <span id="l7"></span><br>
+            <span id="l8"></span><br>
+            <span id="l9"></span><br>
+            <span id="l10"></span><br>
+            <span id="l11"></span><br>
+            <span id="l12"></span>
+        </div>
+    </main>
+    
+
+    <footer>
+        <div >
+            Izstrādāja: Dmitrijs Pavlovičs 
+            
+        </div>
+        <div>
+            Gmail: pavlovicdmtrijs@gmail.com
+        </div>
+    </footer>
+</body>
+
+    <script>
+      var content = {
+            LV: {
+                title: "Galvenā",
+
+                main:"Galvenā",
+                foto:"Foto",
+                services:"Pakalpojumi",
+                contact:"Kontakti",
+                
+                h1: "PAKALPOKUMI",
+                l1: "Izmantojot rūpnieciskā alpīnisma tehnoloģiju, mēs esam gatavi ātri un kvalitatīvi izpildīt, priekš Jums, dažāda veida un sarežģītības pakāpes sekojušus darbus augstumā!",
+                l2: "Dūmvadu un skursteņu remonts;",
+                l3: "Jumtu remonts un apkalpošana;",
+                l4: "Jumtu attīrīšana no sniega, lāstekām, apledojuma, kā arī koku lapām un sūnām;",
+                l5: "Remonts, restaurācija, attīrīšana (ūdens notekām, sniega barjerām, dažāda veida ēku karnīzēm, palodzēm);",
+                l6: "Siltināšana un hermetizācija starppaneļu šuves paneļu mājās;",
+                l7: "Montāža augstumā (kabeļu, ventilācijas, ūdens notekas, antēnas);",
+                l8: "Metāla konstrukciju montāža, demontāža (baneri, plakāti, izkārtnes, gaismas kārbas, lielformāta burti, neons, gaismas prožektori u.c.);",
+                l9: "Ziemassvētku eglīšu lampiņu un rotājumu uzstādīšana;",
+                l10: "Fasādes darbi (fasādes mazgāšana, tīrīšana, krāsošana, stiklošana, remonts, restaurācija);",
+                l11: "Aizsargtīklu uzstādīšana uz fasādes;",
+                l12: "Krāsotāja darbi: fasādes krāsošana, apstrādāšana ar skābi, metāla konstrukciju gruntēšana+krāsošana, cisternas, ūdenstorņi, antēnas, torņi, skursteņi, elektropārraides stabi, metāla jumti."
+            },
+            RU: {
+                title: "Главная",
+
+                main:"Главная",
+                foto:"Фото",
+                services:"Услуги",
+                contact:"Контакты",
+                
+                h1: "УСЛУГИ",
+                l1: "Используя технологию промышленного альпинизма, мы готовы быстро и качественно выполнить для Вас следующие виды высотных работ.",
+                l2: "Ремонт дымовых труб;",
+                l3: "Ремонт и обслуживание крыш;",
+                l4: "Очистка крыши от снега, наледи, сосулек, a так-же листьев хвои и мха;",
+                l5: "Очистка, реставрация и ремонт водосточных желобов, снежных барьеров, карнизов, кровельных ограждений;",
+                l6: "Утепление и герметизация меж панельных швов панельных домов;",
+                l7: "Высотный монтаж (воздуховодов, вентиляции, водостоков, антенн, кабеля);",
+                l8: "Монтаж, демонтаж, рекламных конструкций (баннеры, плакаты, вывески, световые короба, объемные буквы, неон, гирлянды, осветительные прожекторы и др. конструкции);",
+                l9: "Установка Рождественских гирлянд, украшений;",
+                l10: "Фасадные работы (мойка фасадов, очистка фасадов, покраска фасадов, остекление фасадов);",
+                l11: "Установка защитной сетки на фасады;",
+                l12: "Малярные работы: покраска, обработка кислотой, грунтовка металлических конструкций, фасадов, кровли, цистерны, водонапорные башни, линии электропередач, антенны, вышки, дымовые трубы, столбы электропередач, металлических крыш."
+            },
+            EN: {
+                title: "Main",
+
+                main:"Main",
+                foto:"Foto",
+                services:"Services",
+                contact:"Contact",
+                
+                h1: "SERVICES",
+                l1: "We are ready to complete the following works of various types and degrees of difficulty in the height, using the technique of industrial mountaineering!",
+                l2: "Repairs of flue pipes and chimneys;",
+                l3: "Repairs and maintenance of roofs;",
+                l4: "Removal of snow, icicles, ice-cover from roofs, as well as leaves and moss;",
+                l5: "Removal of snow, icicles, ice-cover from roofs, as well as leaves and moss;",
+                l6: "Insulation and sealing of inter-panel joints in panel buildings;",
+                l7: "Assembling (of cables, ventilation, gutters and antennas) in the height;",
+                l8: "Mounting, dismantling of metal constructions (banners, posters, signboards, light boxes, large scale letters, neon, searchlights, etc.);",
+                l9: "Placing Christmas tree lamps and decorations;",
+                l10: "Facade works (washing, cleaning, painting, repairs and renovation of facades);",
+                l11: "Installation of safety nettings;",
+                l12: "Painting works: painting of facades, acid treatment, priming + painting of metal constructions, tanks, water towers, antennas, towers, chimneys, electric power transmission poles, and metal roofs."
+            }
+        }
+        console.log(document.cookie);
+        console.log(document.cookie.indexOf('lang'));
+        if (document.cookie.indexOf('lang') == -1) {
+            showContent('LV');
+        } else {
+            var language = document.cookie.slice(5, 8);
+            showContent(language);
+        }
+
+
+        function showContent(lang) {
+
+            if (lang === 'LV') {
+                document.querySelector('title').innerText = content.LV.title;
+                document.querySelector('#main').innerText = content.LV.main;
+                document.querySelector('#foto').innerText = content.LV.foto;
+                document.querySelector('#services').innerText = content.LV.services;
+                document.querySelector('#contact').innerText = content.LV.contact;
+                document.querySelector('h1').innerText = content.LV.h1;
+                document.querySelector('#l1').innerText = content.LV.l1;
+                document.querySelector('#l2').innerText = content.LV.l2;
+                document.querySelector('#l3').innerText = content.LV.l3;
+                document.querySelector('#l4').innerText = content.LV.l4;
+                document.querySelector('#l5').innerText = content.LV.l5;
+                document.querySelector('#l6').innerText = content.LV.l6;
+                document.querySelector('#l7').innerText = content.LV.l7;
+                document.querySelector('#l8').innerText = content.LV.l8;
+                document.querySelector('#l9').innerText = content.LV.l9;
+                document.querySelector('#l10').innerText = content.LV.l10;
+                document.querySelector('#l11').innerText = content.LV.l11;
+                document.querySelector('#l12').innerText = content.LV.l12;
+            } else {
+                if (lang === 'RU'){
+                    document.querySelector('title').innerText = content.RU.title;
+                    document.querySelector('#main').innerText = content.RU.main;
+                    document.querySelector('#foto').innerText = content.RU.foto;
+                    document.querySelector('#services').innerText = content.RU.services;
+                    document.querySelector('#contact').innerText = content.RU.contact;
+                    document.querySelector('h1').innerText = content.RU.h1;
+                    document.querySelector('h1').innerText = content.RU.h1;
+                    document.querySelector('#l1').innerText = content.RU.l1;
+                    document.querySelector('#l2').innerText = content.RU.l2;
+                    document.querySelector('#l3').innerText = content.RU.l3;
+                    document.querySelector('#l4').innerText = content.RU.l4;
+                    document.querySelector('#l5').innerText = content.RU.l5;
+                    document.querySelector('#l6').innerText = content.RU.l6;
+                    document.querySelector('#l7').innerText = content.RU.l7;
+                    document.querySelector('#l8').innerText = content.RU.l8;
+                    document.querySelector('#l9').innerText = content.RU.l9;
+                    document.querySelector('#l10').innerText = content.RU.l10;
+                    document.querySelector('#l11').innerText = content.RU.l11;
+                    document.querySelector('#l12').innerText = content.RU.l12;
+                }else{
+                    // EN
+                    document.querySelector('title').innerText = content.EN.title;
+                    document.querySelector('#main').innerText = content.EN.main;
+                    document.querySelector('#foto').innerText = content.EN.foto;
+                    document.querySelector('#services').innerText = content.EN.services;
+                    document.querySelector('#contact').innerText = content.EN.contact;
+                    document.querySelector('h1').innerText = content.EN.h1;
+                    document.querySelector('#l1').innerText = content.EN.l1;
+                    document.querySelector('#l2').innerText = content.EN.l2;
+                    document.querySelector('#l3').innerText = content.EN.l3;
+                    document.querySelector('#l4').innerText = content.EN.l4;
+                    document.querySelector('#l5').innerText = content.EN.l5;
+                    document.querySelector('#l6').innerText = content.EN.l6;
+                    document.querySelector('#l7').innerText = content.EN.l7;
+                    document.querySelector('#l8').innerText = content.EN.l8;
+                    document.querySelector('#l9').innerText = content.EN.l9;
+                    document.querySelector('#l10').innerText = content.EN.l10;
+                    document.querySelector('#l11').innerText = content.EN.l11;
+                    document.querySelector('#l12').innerText = content.EN.l12;
+                }
+            }
+
+        }
+
+
+        function setLang(lang) {
+            document.cookie = `lang=${lang};max-age=5000000`;
+            var language = document.cookie.slice(5, 8);
+            showContent(language);
+        }
+        </script>
+</html>
